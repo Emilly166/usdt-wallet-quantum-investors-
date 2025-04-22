@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyTrust Wallet</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wallet-container">
+    <header>
+      <h1>MyTrust Wallet</h1>
+      <div class="wallet-address" id="wallet-address"></div>
+    </header>
+
+    <section class="balance-section">
+      <img src="usdt.png" alt="USDT Logo" class="token-icon" />
+      <div>
+        <h2 id="balance">0</h2>
+        <p>USDT</p>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button onclick="showSend()">Send</button>
+      <button onclick="showReceive()">Receive</button>
+    </section>
+
+    <section id="send-section" class="hidden">
+      <h3>Send USDT</h3>
+      <input type="text" id="send-to" placeholder="Receiver Wallet Address" />
+      <input type="number" id="send-amount" placeholder="Amount" />
+      <button onclick="sendUSDT()">Confirm Send</button>
+    </section>
+
+    <section id="receive-section" class="hidden">
+      <h3>Your Wallet QR</h3>
+      <canvas id="qrCanvas"></canvas>
+    </section>
+
+    <section class="history">
+      <h3>Transaction History</h3>
+      <ul id="history"></ul>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script src="wallet.js"></script>
+</body>
+</html>
